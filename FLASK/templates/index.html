@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORK SMART GIRIS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Diğer stil dosyalarını buraya ekleyebilirsiniz -->
+    <script src="../templates/static/clickers.js">   </script>
+    <style>
+        body {
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative; /* Position değeri eklenmiştir */
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+            position: relative; /* Position değeri eklenmiştir */
+        }
+
+        .title {
+            font-size: 44px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: lighter;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .error {
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #2ecc71;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+
+        /* İcon stilini ekleyin */
+        .icon {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-size: 54px; /* İstenilen font boyutu */
+        }
+    </style>
+</head>
+<body>
+    <i class="fa-brands fa-squarespace icon"></i>
+
+    <div class="header">
+        W.S.
+    </div>
+    
+    <div class="container">
+        <div class="title">WORK SMART</div>
+        <div class="subtitle">HOŞ GELDİNİZ</div>
+        <!-- {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %} -->
+        <form action="{{ url_for('login') }}" method="post">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" required>
+            <label for="password">Şifre:</label>
+            <input type="password" name="password" required>
+            <button type="submit" id="form-submit" >Giriş Yap</button>
+        </form>
+    </div>
+</body>
+</html>

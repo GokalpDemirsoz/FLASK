@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORK SMART HOME</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px;
+            background-color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .section {
+            text-align: center;
+            margin: 20px;
+            flex: 0 0 calc(33.333% - 40px);
+        }
+
+        .section h2 {
+            font-size: 24px;
+            font-weight: bolder;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .buttons button {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            background-color: #ffffff8e;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            width: calc(80% - 18px);
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .buttons button:hover {
+            background-color: #2980b9; 
+        }
+
+        /* Çıkış düğmesi */
+        .logout-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+        }
+
+        .logout-btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #e74c3c;
+            border: 2px solid #c0392b;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .logout-btn button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        W.S.
+    </div>
+    
+    <div class="sections">
+        <div class="section">
+            <h2>ITHALAT / IHRACAT</h2>
+            <div class="buttons">
+                <button>4000</button><button onclick="redirectToPage('4000.html')">4000</button>
+                <button>1000</button>
+                <button>2100</button>
+                <button>5321</button>
+                <button>DIGER ITHALAT</button>
+                <button>DIGER IHRACAT</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ANTREPO</h2>
+            <div class="buttons">
+                <button>7100</button>
+                <button>4071</button>
+                <button>7171</button>
+                <button>3171</button>
+                <button>Düğme 5</button>
+                <button>Düğme 6</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>OZET BEYAN</h2>
+            <div class="buttons">
+                <button>DENIZ YOLU ITHALAT</button>
+                <button>HAVA YOLU ITHALAT</button>
+                <button>DIGER ITHALAT</button>
+                <button>ITHALAT TRANSIT</button>
+                <button>ITHALAT TRANSIT YENIDEN IHRACAT</button>
+                <button>Düğme 6</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Çıkış düğmesi -->
+    <div class="logout-btn">
+        <form action="{{ url_for('logout') }}" method="get">
+            <button type="submit">Çıkış Yap</button>
+        </form>
+    </div>
+</body>
+</html>
